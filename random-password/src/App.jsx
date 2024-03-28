@@ -44,19 +44,20 @@ function App() {
     generatePassword()    
   },[length,numberAllowed,charAllowed])
 
-  console.log(charAllowed);
-  console.log(numberAllowed);
-
+  
   return (
     <>
-      <div className='bg-zinc-500 h-screen'>
-        <h1 className='flex text-blue-100 justify-center text-3xl'>Password Generator</h1>
-        <div className='m-10 flex justify-center'>
-          <input className='px-[90px] text-black'  type="text " value={password} placeholder='Enter your password' readOnly  ref={passwordRef} aria-label="Generated Password"/>
+      {/* <div className='h-screen w-full bg-password'></div> */}
+      <div className=' bg-zinc-900 h-screen w-full bg-hero bg-center bg-cover  bg-no-repeat'>
+        
+        <h1 className=' flex text-black justify-center items-center text-3xl pt-32 '>Password Generator</h1>
+        
+        <div className='mt-12 ml-12 mr-12 flex justify-center'>
+          <input className='px-10 text-black '  type="text " value={password} placeholder='Enter your password' readOnly  ref={passwordRef} aria-label="Generated Password"/>
           &nbsp;
-          <button className='text-yellow-400 px-4' onClick={copyPasswordToClipboard}>copy</button>
+          <button className='text-gray- px-4 ' onClick={copyPasswordToClipboard}>copy</button>
         </div>
-        <div className='flex justify-center'>
+        <div className='flex justify-center m-10'>
           <input
             type="range"
             min={8}
@@ -65,7 +66,7 @@ function App() {
             onChange={(e) => setLength(e.target.value)}
 
           />
-          <label className='text-amber-400' htmlFor="Length">Length:{length}</label>
+          <label className='text-yellow-50' htmlFor="Length">Length:{length}</label>
           &nbsp;
           <input 
           type="checkbox" 
@@ -78,7 +79,7 @@ function App() {
           
           />
           
-          <label className='text-amber-400' htmlFor="numbers">Numbers</label>
+          <label className='text-yellow-50' htmlFor="numbers">Numbers</label>
           &nbsp;
           <input 
           type="checkbox" 
@@ -89,7 +90,7 @@ function App() {
           
           />
          
-          <label className='text-amber-400' htmlFor="numbers">Characters</label>
+          <label className='text-yellow-50' htmlFor="numbers">Characters</label>
 
             
 
