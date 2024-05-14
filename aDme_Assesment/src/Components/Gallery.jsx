@@ -13,6 +13,7 @@ const GalleryItem = ({ item }) => (
 );
 
 const Pagination = ({ pageCount, currentPage, onPageChange, pagesToShow }) => {
+  console.log(currentPage);
   const handlePageClick = (pageNumber) => {
     if (pageNumber >= 1 && pageNumber <= pageCount) {
       onPageChange(pageNumber);
@@ -20,8 +21,9 @@ const Pagination = ({ pageCount, currentPage, onPageChange, pagesToShow }) => {
   };
 
   const startIndex = Math.max(0, currentPage - Math.floor(pagesToShow / 2) - 1);
+  console.log(startIndex);
   const endIndex = Math.min(pageCount, startIndex + pagesToShow);
-
+console.log(endIndex);
   const pageNumbers = [];
   for (let i = startIndex; i < endIndex; i++) {
     pageNumbers.push(i + 1);
@@ -91,6 +93,9 @@ const Gallery = () => {
   };
 
   const pageCount = Math.ceil(data.length / itemsPerPage);
+  console.log(data.length);
+  console.log(data);
+  console.log(pageCount);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
